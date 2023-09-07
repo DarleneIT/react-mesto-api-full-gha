@@ -1,0 +1,15 @@
+.header__into {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    max-height: 22px;
+  }
+  
+  .header__into:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }

@@ -1,0 +1,28 @@
+.profile__open {
+  background-color: transparent;
+  background-image: url(../../../images/edit_button.svg);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #FFFFFF;
+  width: 24px;
+  height: 24px;
+  margin-top: 15px;
+  margin-right: 10px;
+  transition: opacity .4s ease-in-out;
+}
+
+.profile__open:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  }
+
+  @media screen and (max-width: 465px) {
+    .profile__open {
+      width: 18px;
+      height: 18px;
+      margin-top: 8px;
+      margin-right: 0;
+      background-size: 7.5px;
+    }
+  }

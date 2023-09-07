@@ -1,0 +1,17 @@
+.header__out {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 330px;
+    margin: 0;
+    padding: 0;
+    color: rgba(169, 169, 169, 1);
+    background-color: transparent;
+    border: none;
+  }
+  
+  .header__out:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    color: white;
+  }

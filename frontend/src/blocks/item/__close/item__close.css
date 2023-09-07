@@ -1,0 +1,28 @@
+.item__close {
+  background-color: transparent;
+  background-image: url(../../../images/close_button.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: none;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 32px;
+  height: 32px;
+  transition: opacity .4s ease-in-out;
+}
+
+.item__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 565px) {
+  .item__close {
+    width: 20px;
+    height: 20px;
+    bottom: -36px;
+    right: 0;
+   }
+  }

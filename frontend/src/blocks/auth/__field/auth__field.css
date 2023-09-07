@@ -1,0 +1,14 @@
+.auth__field {
+    color: white;
+    background-color: transparent;
+    margin: 0 0 30px 0;
+    min-height: 27px;
+    border-style: none;
+    border-bottom: 2px solid rgba(204, 204, 204, 1);
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  .auth__field:last-of-type {
+    margin: 0;
+  }

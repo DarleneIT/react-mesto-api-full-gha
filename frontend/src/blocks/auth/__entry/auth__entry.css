@@ -1,0 +1,17 @@
+.auth__entry {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  max-width: 358px;
+  min-height: 17px;
+  align-self: center;
+  margin: 15px 0 0 0;
+  padding: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.auth__entry:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

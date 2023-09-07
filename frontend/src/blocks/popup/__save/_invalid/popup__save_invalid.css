@@ -1,0 +1,21 @@
+.popup__save_invalid {
+    width: 358px;
+    min-height: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.15);
+    border: rgba(0, 0, 0, 0.15) 1px solid;
+    border-radius: 2px;
+}
+  
+  @media screen and (max-width: 565px) {
+    .popup__save_invalid {
+      max-width: 238px;
+      max-height: 45px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
