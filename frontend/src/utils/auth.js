@@ -25,11 +25,11 @@ class Auth {
     }
   
     register(data) {
-      return this._request(`signup`, "POST", data);
+      return this._request(`/signup`, "POST", data);
     }
   
     login(data) {
-      return this._request(`signin`, "POST", data);
+      return this._request(`/signin`, "POST", data);
     }
   
     checkToken(jwt) {
@@ -44,7 +44,7 @@ class Auth {
   }
   
   export const auth = new Auth({
-    url: "http://localhost:3000/",
+    url: "http://api.mesto.darlene.nomoredomainsicu.ru",
     headers: {
       "Content-Type": "application/json",
     },
