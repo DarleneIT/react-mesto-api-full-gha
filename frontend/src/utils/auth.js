@@ -33,7 +33,7 @@ class Auth {
     }
   
     checkToken(jwt) {
-      return fetch(`${this._url}users/me`, {
+      return fetch(`${this._url}/users/me`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ class Auth {
   }
   
   export const auth = new Auth({
-    url: "http://api.mesto.darlene.nomoredomainsicu.ru",
+    url: "https://api.mesto.darlene.nomoredomainsicu.ru",
     headers: {
       "Content-Type": "application/json",
     },

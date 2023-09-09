@@ -106,5 +106,5 @@ class Api {
 }
 
 export const api = new Api({
-  url: "http://api.mesto.darlene.nomoredomainsicu.ru",
+  url: "https://api.mesto.darlene.nomoredomainsicu.ru",
 });
