@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const UnauthorizedError = require('../errors/Unauthorized');
 
 const URL_REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
-
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -63,11 +62,11 @@ userSchema.statics.findUserByCredentials = async function findUserByCredentials(
     .select('+password')
     .then((user) => {
       if (!user) {
-        throw new UnauthorizedError('Пожалуйста, проверьте корректность почты или пароля');
+        throw new UnauthorizedError('Пожалуйста, проверьте корректность почты или пароля 1');
       }
       return bcrypt.compare(password, user.password).then((matched) => {
         if (!matched) {
-          throw new UnauthorizedError('Пожалуйста, проверьте корректность почты или пароля');
+          throw new UnauthorizedError('Пожалуйста, проверьте корректность почты или пароля 2');
         }
         return user;
       });

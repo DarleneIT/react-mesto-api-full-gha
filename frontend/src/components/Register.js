@@ -25,7 +25,7 @@ function Register({ onRegister }) {
             type="email"
             name="email"
             placeholder="Email"
-            minLength={5}
+            minLength={3}
             maxLength={40}
             autoComplete="off"
           />
@@ -37,7 +37,7 @@ function Register({ onRegister }) {
             type="password"
             name="password"
             placeholder="Пароль"
-            minLength={8}
+            minLength={3}
             maxLength={15}
           />
 

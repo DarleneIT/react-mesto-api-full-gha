@@ -13,7 +13,7 @@ class Auth {
   
     _request(path, method, data) {
       let body = data;
-      if ((method === "PATCH" || method === "POST") && data) {
+      if ((method === "POST") && data) {
         body = JSON.stringify(data);
       }
       return fetch(this._url + path, {
@@ -36,15 +36,15 @@ class Auth {
       return fetch(`${this._url}users/me`, {
         method: "GET",
         headers: {
-          ...this._headers,
-          Authorization: `Bearer ${jwt}`,
+          "Content-Type": "application/json",
+          authorization: `Bearer ${jwt}`,
         },
       }).then(this._checkResponse);
     }
   }
   
   export const auth = new Auth({
-    url: "https://auth.nomoreparties.co/",
+    url: "http://localhost:3000/",
     headers: {
       "Content-Type": "application/json",
     },

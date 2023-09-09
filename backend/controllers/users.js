@@ -37,7 +37,7 @@ module.exports.createUser = (req, res, next) => {
 
 module.exports.getCurrentUser = (req, res, next) => {
   User.findById(req.user._id)
-    .then((users) => res.status(200).send({ users }))
+    .then((users) => res.status(200).send(users))
     .catch(next);
 };
 
@@ -93,7 +93,7 @@ module.exports.editUserAvatar = (req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('Пользователь с таким id не найден');
     })
-    .then((user) => res.send({ user }))
+    .then((user) => res.status(200).send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequestError('Не удалось обновить аватар'));

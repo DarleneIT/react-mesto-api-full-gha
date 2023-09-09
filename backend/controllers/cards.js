@@ -7,7 +7,6 @@ const BadRequestError = require('../errors/BadRequest');
 
 module.exports.getCards = (_, res, next) => {
   Card.find({})
-    .populate(['owner', 'likes'])
     .then((cards) => {
       res.status(200).send(cards);
     })
@@ -23,11 +22,7 @@ module.exports.createCard = (req, res, next) => {
     link,
     owner,
   })
-    .then((card) => {
-      Card.findById(card._id)
-        .populate('owner')
-        .then(() => res.status(201).send(card));
-    })
+    .then((card) => res.status(201).send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные'));
@@ -43,11 +38,12 @@ module.exports.likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
+    .orFail()
     .then((card) => {
       if (!card) {
         next(new NotFoundError('Карточка с таким id не найдена'));
       } else {
-        res.send({ card });
+        res.status(200).send(card);
       }
     })
     .catch((err) => {
@@ -69,11 +65,12 @@ module.exports.dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
+    .orFail()
     .then((card) => {
       if (!card) {
         next(new NotFoundError('Карточка с таким id не найдена'));
       } else {
-        res.send({ card });
+        res.status(200).send(card);
       }
     })
     .catch((err) => {

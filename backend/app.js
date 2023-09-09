@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
@@ -5,6 +6,9 @@ const helmet = require('helmet');
 const router = require('express').Router();
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+
+const cors = require('cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
@@ -19,6 +23,8 @@ const error = require('./middlewares/error');
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 const app = express();
 
+app.use(cors());
+
 mongoose.set('strictQuery', true);
 mongoose.connect(DB_URL);
 
@@ -27,6 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(helmet());
+
+app.use(requestLogger);
 
 app.use('/', router);
 app.post('/signin', login);
@@ -40,6 +48,8 @@ app.use('/users', auth, usersRouter);
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Cтраница не найдена'));
 });
+
+app.use(errorLogger);
 app.use(errors());
 app.use(error);
 

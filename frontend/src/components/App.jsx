@@ -74,7 +74,7 @@ function App() {
     Promise.all([api.getUserInfo(), api.getItems()])
     .then(([currentUser, initialCards]) => {
       setCurrentUser(currentUser);
-      setCards(initialCards);
+      setCards(initialCards.reverse());
     })
     .catch((error) => {
       console.log(`Не удалось получить данные ${error}`);
@@ -100,10 +100,10 @@ function handleSubmit(request) {
     .finally(() => setIsLoading(false));
 }
 
-function handleUpdateUser(data) {
+function handleUpdateUser(users) {
   function makeRequest() {
     return api
-      .setUserInfo({ name: data.name, about: data.about })
+      .setUserInfo({ name: users.name, about: users.about })
       .then(setCurrentUser);
   }
   handleSubmit(makeRequest);
@@ -130,7 +130,7 @@ function handleAddPlaceSubmit(data) {
 }
 
 function handleCardLike(card) {
-  const isLiked = card.likes.some((i) => i._id === currentUser._id);
+  const isLiked = card.likes.some((i) => i === currentUser._id);
   api
     .changeLikeCardStatus(card._id, !isLiked)
     .then((newCard) => {
@@ -189,7 +189,7 @@ function handleTokenCheck() {
   auth
     .checkToken(jwt)
     .then((res) => {
-      setEmail(res.data.email);
+      setEmail(res.email);
       setIsLoggedIn(true);
       navigate("/")
     })

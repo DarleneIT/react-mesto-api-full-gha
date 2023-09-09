@@ -12,6 +12,7 @@ function Main({
   onCardDelete,
 }) {
   const currentUser = useContext(CurrentUserContext);
+  const { name, about, avatar } = currentUser;
 
   return (
     <main className="content">
@@ -24,18 +25,18 @@ function Main({
           <img
             className="profile__avatar"
             alt="Аватар пользователя"
-            src={currentUser.avatar ? currentUser.avatar : "#"}
+            src={avatar}
           />
         </div>
         <div className="profile__info">
-          <h1 className="profile__name">{currentUser.name}</h1>
+          <h1 className="profile__name">{name}</h1>
           <button
             className="profile__open"
             type="button"
             aria-label="Редактировать профиль"
             onClick={onEditProfile}
           />
-          <p className="profile__job">{currentUser.about}</p>
+          <p className="profile__job">{about}</p>
         </div>
         <button
           className="profile__add-button"
