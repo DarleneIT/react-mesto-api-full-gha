@@ -27,9 +27,7 @@ const corsOptions = {
   origin: [
     'https://mesto.darlene.nomoredomainsicu.ru',
     'http://mesto.darlene.nomoredomainsicu.ru',
-    'https://localhost:3000',
     'http://localhost:3000',
-    'https://localhost:3001',
     'http://localhost:3001',
   ],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
