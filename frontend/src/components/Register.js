@@ -50,7 +50,7 @@ function Register({ onRegister }) {
           </form>
 
           <div className="auth__entry">
-            <Link to="/sign-in" className="auth__link" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/signin" className="auth__link" style={{ textDecoration: "none", color: "white" }}>
               Уже зарегистрированы? Войти
             </Link>
           </div>

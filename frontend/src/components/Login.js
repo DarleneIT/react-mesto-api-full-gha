@@ -41,7 +41,7 @@ function Login({ onLogin }) {
           />
 
           <button 
-            to="/sign-up" 
+            to="/signup" 
             className="auth__submit" 
             type="submit">
               Войти

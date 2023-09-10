@@ -156,7 +156,7 @@ function handleRegister(data) {
     .then((res) => {
       setIsSuccessInfoTooltipStatus(true);
       openInfoTooltip();
-      navigate("/sign-in");
+      navigate("/signin");
     })
     .catch((err) => {
       console.log(err);
@@ -201,7 +201,7 @@ function handleTokenCheck() {
 function handleSignOut() {
   localStorage.removeItem("jwt");
   setIsLoggedIn(false);
-  navigate("/sign-in");
+  navigate("/signin");
 }
 
 const isOpen =
@@ -249,12 +249,12 @@ const isOpen =
           />
 
           <Route
-            path="/sign-in"
+            path="/signin"
             element={<Login onLogin={handleLogin} navigate={navigate} />}
           />
 
           <Route
-            path="/sign-up"
+            path="/signup"
             element={
               <Register onRegister={handleRegister} navigate={navigate} />
             }
@@ -263,7 +263,7 @@ const isOpen =
           <Route
             path="*"
             element={
-              isLoggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />
+              isLoggedIn ? <Navigate to="/" /> : <Navigate to="/signin" />
             }
           />
         </Routes>

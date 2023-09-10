@@ -8,18 +8,18 @@ function Header({ email, onSignOut }) {
 
       <Routes>
         <Route
-          path="/sign-in"
+          path="/signin"
           element={
-            <Link to="/sign-up" className="header__into">
+            <Link to="/signup" className="header__into">
               Регистрация
             </Link>
           }
         />
 
         <Route
-          path="/sign-up"
+          path="/signup"
           element={
-            <Link to="/sign-in" className="header__into">
+            <Link to="/signin" className="header__into">
               Войти
             </Link>
           }
