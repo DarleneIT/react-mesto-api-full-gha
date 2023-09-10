@@ -7,7 +7,7 @@ const router = require('express').Router();
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const usersRouter = require('./routes/users');
