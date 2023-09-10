@@ -106,6 +106,6 @@ class Api {
 }
 
 export const api = new Api({
-  //url: "http://localhost:3000",
-  url: "https://api.mesto.darlene.nomoredomainsicu.ru",
+  url: "http://localhost:3000",
+  //url: "https://api.mesto.darlene.nomoredomainsicu.ru",
 });
