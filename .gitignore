@@ -13,7 +13,8 @@ npm-debug.log*
 
 # dependencies
 /node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.js
 
 # testing
