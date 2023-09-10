@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.117.6
+IP 158.160.117.6
 
 Frontend https://mesto.darlene.nomoredomainsicu.ru
 
